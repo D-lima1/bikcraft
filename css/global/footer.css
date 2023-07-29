@@ -36,8 +36,31 @@
   gap: 32px;
 }
 
+.footer a {
+  transition: color 0.2s;
+  position: relative;
+}
+
 .footer a:hover {
   color: var(--cor-0);
+}
+
+.footer-informacoes a::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin-top: 4px;
+  background: var(--cor-0);
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.footer-informacoes a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .footer-copy {
@@ -59,6 +82,10 @@
   .footer {
     grid-template-columns: 1fr;
     gap: 60px;
+  }
+
+  .footer-informacoes a::after {
+    display: none;
   }
 
   .footer-copy {
